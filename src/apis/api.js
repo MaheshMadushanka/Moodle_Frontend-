@@ -1,13 +1,14 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://13.203.160.138:8070/api';
+//const API_BASE_URL = 'http://13.203.160.138:8070/api';
 
 // Create axios instance with default config
 const apiClient = axios.create({
-  baseURL: API_BASE_URL,
+  baseURL: '/api',
+  timeout: 10000,
   headers: {
-    'Content-Type': 'application/json',
-  },
+    'Content-Type': 'application/json'
+  }
 });
 
 // Add token to requests if it exists
@@ -61,3 +62,6 @@ export const userAPI = {
     }
   }
 };
+
+// Export apiClient for use in other modules if needed
+export { apiClient };
