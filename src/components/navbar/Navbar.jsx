@@ -83,7 +83,9 @@ function Navbar({ onMenuClick }) {
       displayRole = 'Admin'
       userType = 'admin'
     }
-
+    console.log('User Info:', { name, email: userDetails.email, role, displayRole, userType })
+    localStorage.setItem('userName', name)
+    console.log('User Name stored in localStorage:', localStorage.getItem('userName'))  
     return {
       name: name,
       email: userDetails.email,
